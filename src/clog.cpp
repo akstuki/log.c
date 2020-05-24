@@ -174,7 +174,7 @@ void CLog::log_log(int level, const char *fmt, ...) {
   }
 
   /* Log to file */
-  if (get_file_size(_filename.c_str())> MAX_LOG_FILE_SIZE) {
+  if (is_newlog_required()) {
      open_new_file();
   }
   if (_fp) {
