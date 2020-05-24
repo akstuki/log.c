@@ -127,7 +127,7 @@ bool CLog::is_newlog_required() {
    if (_dom_type == DOM_DATE) {
       time_t t = time(NULL);
       struct tm* lt = localtime(&t);
-      if (lt->tm_min != _last_day) {
+      if (lt->tm_mday != _last_day) {
          _last_day = lt->tm_mday;
          return true;
       }
